@@ -50,7 +50,7 @@ const GoogleAuth = ({ isSignedIn, signIn, signOut }) => {
 };
 
 const mapStateToProps = (state) => {
-  console.log(state);
+  // console.log(state);
   return { isSignedIn: state.auth.isSignedIn };
 };
 export default connect(mapStateToProps, { signIn, signOut })(GoogleAuth);

@@ -21,7 +21,7 @@ const GoogleAuth = ({ isSignedIn, signIn, signOut }) => {
           auth2.current.isSignedIn.listen(OnAuthChange);
         });
     });
-  }, []);
+  }, [signIn, signOut]);
 
   const onSignOut = () => {
     auth2.current.signOut();

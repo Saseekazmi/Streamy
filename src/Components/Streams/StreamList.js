@@ -28,7 +28,9 @@ const StreamList = ({ streams, fetchStreamList, userId, isSignedIn }) => {
         {stream.userId === userId && renderButtons(stream)}
         <i className="large icon camera middle aligned" />
         <div className="content">
-          <div className="header">{stream.title}</div>
+          <Link to={`/streams/show/${stream.id}`} className="header">
+            {stream.title}
+          </Link>
           <div className="description">{stream.description}</div>
         </div>
       </div>

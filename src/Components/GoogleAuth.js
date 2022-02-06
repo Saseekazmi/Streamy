@@ -2,6 +2,8 @@ import React, { useEffect, useRef } from "react";
 import { connect } from "react-redux";
 
 import { signIn, signOut } from "../action";
+const API_KEY = process.env.REACT_APP_OAUTH_API_KEY;
+
 const GoogleAuth = ({ isSignedIn, signIn, signOut }) => {
   const auth2 = useRef();
 
@@ -12,7 +14,7 @@ const GoogleAuth = ({ isSignedIn, signIn, signOut }) => {
     window.gapi.load("client:auth2", () => {
       window.gapi.client
         .init({
-          clientId: "oauth id",
+          clientId: API_KEY,
           scope: "email",
         })
         .then(() => {
